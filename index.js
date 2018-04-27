@@ -125,6 +125,7 @@ function endGame() {
   }
   window.removeEventListener('keydown', moveDodger);
   alert('YOU LOSE!');
+  START.style.display = 'initial';
 }
 
 function moveDodger(e) {

@@ -38,7 +38,6 @@ function checkCollision(rock) {
     const rockRightEdge = rockLeftEdge + 20;
 
     if (rockLeftEdge <= dodgerRightEdge && rockRightEdge>= dodgerLeftEdge) {
-    //if ((rockLeftEdge < dodgerLeftEdge && rockRightEdge >= dodgerLeftEdge) || (rockLeftEdge >= dodgerLeftEdge && rockRightEdge <= dodgerRightEdge) || (rockLeftEdge <= dodgerRightEdge && rockRightEdge > dodgerRightEdge)) {
     /**
                * Think about it -- what's happening here?
                * There's been a collision if one of three things is true:

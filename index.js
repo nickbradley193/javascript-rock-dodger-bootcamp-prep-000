@@ -2,6 +2,7 @@
  * Don't change these constants!
  */
 const DODGER = document.getElementById('dodger')
+const DODGER_INIT_LEFT = DODGER.style.left;
 const GAME = document.getElementById('game')
 const GAME_HEIGHT = 400
 const GAME_WIDTH = 400
@@ -126,6 +127,7 @@ function endGame() {
   window.removeEventListener('keydown', moveDodger);
   alert('YOU LOSE!');
   START.style.display = 'initial';
+  DODGER.style.left = DODGER_INIT_LEFT;
 }
 
 function moveDodger(e) {

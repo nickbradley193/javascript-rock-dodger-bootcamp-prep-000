@@ -119,6 +119,11 @@ function createRock(x) {
  */
 function endGame() {
   gameInterval = null;
+  while (ROCKS[0]) {
+    ROCKS[0].remove();
+    ROCKS.shift();
+  }
+  
   
 }
 

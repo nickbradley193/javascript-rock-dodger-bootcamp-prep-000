@@ -96,7 +96,7 @@ function createRock(x) {
      * we should remove the rock from the DOM
      */
     } else if (top >= GAME_HEIGHT) {
-      GAME.removeChile
+      GAME.removeChild
     }
   }
 

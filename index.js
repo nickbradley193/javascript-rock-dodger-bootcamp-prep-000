@@ -123,8 +123,8 @@ function endGame() {
     ROCKS[0].remove();
     ROCKS.shift();
   }
-  
-  
+  window.removeEventListener('keydown', moveDodger);
+  alert('YOU LOSE!');
 }
 
 function moveDodger(e) {
@@ -136,6 +136,12 @@ function moveDodger(e) {
    * we've declared for you above.)
    * And be sure to use the functions declared below!
    */
+   
+   if (e.which === LEFT_ARROW) {
+     moveDodgerLeft();
+   } else if (e.which === RIGHT_ARROW) {
+     moveDodgerRight();
+   }
 }
 
 function moveDodgerLeft() {
@@ -144,6 +150,12 @@ function moveDodgerLeft() {
    * This function should move DODGER to the left
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
+  var dodgerLeft = positionToInteger(DODGER.style.left);
+  if (dodgerLeft > 0) {
+    window.requestAnimationFrame( function() {
+      DODGER.style.left = `${dodgerLeft -= 4}px`;
+    });
+  }
 }
 
 function moveDodgerRight() {
@@ -152,6 +164,12 @@ function moveDodgerRight() {
    * This function should move DODGER to the right
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
+  var dodgerLeft = positionToInteger(DODGER.style.left);
+  if (dodgerLeft < (GAME_WIDTH - 40)) {
+    window.requestAnimationFrame( function() {
+      DODGER.style.left = `${dodgerLeft += 4}px`;
+    });
+  }
 }
 
 /**
